@@ -1,0 +1,1 @@
+# percy-last-approved-build-as-baseline
