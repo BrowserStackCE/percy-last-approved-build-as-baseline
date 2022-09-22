@@ -23,13 +23,16 @@ steps:
   displayName: 'Setup Target Build for Percy'
   env:
     PERCY_TOKEN: $(PERCY_READ_TOKEN)
+    PERCY_PROJECT_SLUG: '$(PERCY_PROJECT_SLUG)'
 - script: |
     npm run test
   displayName: 'Run the percy selenium test'
   env:
     PERCY_TOKEN: $(PERCY_TOKEN)
+    PERCY_PARALLEL_TOTAL: $(PERCY_PARALLEL_TOTAL)
 - script: |
     npm run snapshot
   displayName: 'Run the percy snapshot test'
   env:
     PERCY_TOKEN: $(PERCY_TOKEN)
+    PERCY_PARALLEL_TOTAL: $(PERCY_PARALLEL_TOTAL)
