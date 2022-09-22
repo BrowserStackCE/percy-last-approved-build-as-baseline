@@ -59,9 +59,8 @@ async function _findLastApprovedBuild() {
     let commitUrl = lastApprovedBuild.attributes['commit-html-url']
     let commitId = commitUrl?.substring(commitUrl?.lastIndexOf('/') + 1, commitUrl.length);
     if (commitId && baseBranch) {
-        //Solutions for below may vary for different CI
-        //export PERCY_TARGET_BRANCH=baseBranch
-        //export PERCY_TARGET_COMMIT=commitId
+        console.log(`##vso[task.setvariable variable=PERCY_TARGET_BRANCH]${baseBranch}`)
+        console.log(`##vso[task.setvariable variable=PERCY_TARGET_COMMIT]${commitId}`)
     }else{
         console.warn("No base commit found");
     }
