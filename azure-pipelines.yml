@@ -30,9 +30,11 @@ steps:
   env:
     PERCY_TOKEN: $(PERCY_TOKEN)
     PERCY_PARALLEL_TOTAL: $(PERCY_PARALLEL_TOTAL)
+    PERCY_BRANCH: 'main'
 - script: |
     npm run snapshot
   displayName: 'Run the percy snapshot test'
   env:
     PERCY_TOKEN: $(PERCY_TOKEN)
     PERCY_PARALLEL_TOTAL: $(PERCY_PARALLEL_TOTAL)
+    PERCY_BRANCH: 'main'
